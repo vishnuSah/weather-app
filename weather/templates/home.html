@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+    <style>
+      .Heading {
+        height: 50px;
+        /* background-color: powderblue; */
+        /* border: 2px outset red; */
+        background-color: lightblue;
+        /* text-align: center;  */
+      }
+      .mainbody {
+        height: 600px;
+        background-color: powderblue;
+        /* border: 2px outset red; */
+        /* background-color: lightblue; */
+        text-align: center; 
+      }
+
+      .button {
+        background-color: #04AA6D; /* Green */
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+      }
+      .weather-heading{
+        font-size: 25px;
+        text-align: center;
+      }
+
+      .select-city{
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      
+    select{
+      background-color: lightblue;
+      max-width: 100px;
+      max-height: 50px;
+    }
+    option{
+      color: green;
+    }
+      </style>
+</head>
+<body>
+  <div class="Heading">
+    <h2 class="weather-heading">Weather</h2>
+  </div>
+
+  <div class="mainbody">
+    <form action="/" method="post">
+        <label for="city"><span class="select-city">Select your City: </span></label>
+        <select name="city" id="city">
+          <!-- <option disabled selected>Your City</option> -->
+          <optgroup label="Maharashtra">
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+          </optgroup>
+          <optgroup label="Bihar">
+            <option value="Siwan">Siwan</option>
+            <option value="Patna">Patna</option>
+          </optgroup>
+        </select>
+        <br><br>
+        <!-- <input type="submit" value="Submit"> -->
+        <button class="button" type="submit">Submit</button>
+      </form>
+
+    {% if country%}
+    <h3>Country: <span style="font-weight:lighter">{{country}}</span></h3>
+    <h3>City: <span style="font-weight:lighter">{{city}}</span></h3> 
+    <h3>Date & Time: <span style="font-weight:lighter">{{date_time}}</span></h3>
+    <h3>Temperature: <span style="font-weight:lighter">{{temperature}}</span></h3>
+    <h3>Condition: <span style="font-weight:lighter">{{day_condition}}</span></h3>
+    {% endif %}
+
+  </div>
+</body>
+</html>
